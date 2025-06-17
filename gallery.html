@@ -5,490 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traviz</title>
-    <link rel="icon" href="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg" type="image/x-icon" />
+    <link rel="icon" href="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
-    <!-- Google Fonts   -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet">
 
-    <!-- Font-Awesome-CDN   -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="./style.css" />
-
-    <!--! tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* General Body Styles */
-        body {
-            background-color: #f6f0f0;
-            /* Dark background, close to black */
-            color: #FFFFFF;
-            /* White tex
-            t for contrast */
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            /* font-sans */
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-            box-sizing: border-box;
-            /* Default line height */
-        }
-
-        /* Container for content */
-        .container {
-            max-width: 1280px;
-            /* equivalent to max-w-7xl, common Tailwind container width */
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem;
-            /* px-4 */
-            padding-right: 1rem;
-            /* px-4 */
-        }
-
-        /* Main content area */
-        main {
-            padding-top: 2rem;
-            /* py-8 */
-            padding-bottom: 2rem;
-            /* py-8 */
-            padding-left: 1rem;
-            /* px-4 */
-            padding-right: 1rem;
-            /* px-4 */
-        }
-
-        /* Section Title (reused for all sections) */
-        .section-title {
-            padding-top: 2rem;
-            padding-bottom: 1rem;
-            font-size: 2.25rem;
-            /* text-4xl */
-            font-weight: 700;
-            /* font-bold */
-            text-align: center;
-            /* text-center */
-            color: #0b0b0b;
-            /* primary-yellow */
-            margin-bottom: 2rem;
-            /* mb-8 */
-        }
-
-        /* --- Featured Gallery Grid (matches provided picture) --- */
-        .featured-gallery-section {
-            margin-bottom: 3rem;
-            /* mb-12 */
-        }
-
-        .featured-gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            /* Default: single column for mobile */
-            grid-template-rows: auto;
-            gap: 1.5rem;
-            /* gap-6 */
-            border-radius: 0.5rem;
-            /* rounded-lg */
-            overflow: hidden;
-            /* Important for shadow and rounded corners */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-            /* shadow-xl */
-        }
-
-        /* Apply complex grid layout for medium screens and up */
-        @media (min-width: 768px) {
-
-            /* md breakpoint */
-            .featured-gallery-grid {
-                grid-template-columns: 1fr 2fr 1fr;
-                /* Left, Center (wider), Right */
-                grid-template-rows: repeat(2, minmax(18rem, 1fr));
-                /* Two rows, each min 18rem height */
-                height: auto;
-                /* Allow grid to define height */
-            }
-
-            .featured-gallery-item-large {
-                grid-column: 2 / 3;
-                /* Center column */
-                grid-row: 1 / 3;
-                /* Spans both rows */
-                height: auto !important;
-                /* Override fixed height for responsiveness in grid */
-            }
-
-            .featured-gallery-item-small:nth-child(1) {
-                /* Top Left */
-                grid-column: 1 / 2;
-                grid-row: 1 / 2;
-            }
-
-            .featured-gallery-item-small:nth-child(2) {
-                /* Top Right */
-                grid-column: 3 / 4;
-                grid-row: 1 / 2;
-            }
-
-            .featured-gallery-item-small:nth-child(3) {
-                /* Bottom Left */
-                grid-column: 1 / 2;
-                grid-row: 2 / 3;
-            }
-
-            .featured-gallery-item-small:nth-child(4) {
-                /* Bottom Right */
-                grid-column: 3 / 4;
-                grid-row: 2 / 3;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': '#eff2f0',
+                        'secondary-text': '#f7efef',
+                        'dark-accent': '#1A1A1A',
+                        'section-bg': '#f6f2f2',
+                        'primary-yellow': '#FFD700',
+                        'dark-text': '#0b0b0b',
+                    },
+                    gridTemplateColumns: {
+                        'featured-lg': '1fr 2fr 1fr',
+                    },
+                    gridTemplateRows: {
+                        'featured-lg': 'repeat(2, minmax(18rem, 1fr))',
+                    }
+                }
             }
         }
-
-        .featured-gallery-item,
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            /* shadow-lg */
-            cursor: pointer;
-        }
-
-        /* Override border-radius for items within the main featured grid to match the parent */
-        .featured-gallery-grid .featured-gallery-item {
-            border-radius: 0;
-            /* Remove individual item radius for seamless look */
-            box-shadow: none;
-            /* Remove individual item shadow */
-        }
-
-
-        .featured-gallery-item img,
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            /* Fill the grid area */
-            object-fit: cover;
-            transform: scale(1);
-            transition-property: transform;
-            transition-duration: 500ms;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .featured-gallery-item:hover img,
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .featured-gallery-caption,
-        .gallery-caption {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.5rem;
-        }
-
-        .featured-gallery-caption h3,
-        .gallery-caption h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #FFFFFF;
-            margin-bottom: 0.5rem;
-        }
-
-        .featured-gallery-caption p,
-        .gallery-caption p {
-            color: #FFD700;
-            font-size: 1.125rem;
-        }
-
-        /* Ensure text is readable on the larger image too */
-        .featured-gallery-item-large .featured-gallery-caption h3 {
-            font-size: 2.5rem;
-            /* Larger text for the main image */
-            text-align: center;
-        }
-
-        .featured-gallery-item-large .featured-gallery-caption p {
-            font-size: 1.5rem;
-            /* Larger text for the main image */
-            text-align: center;
-        }
-
-        .featured-gallery-item-large .featured-gallery-caption {
-            justify-content: center;
-            /* Center content vertically on large image */
-        }
-
-
-        /* --- Additional Gallery Section (Existing behavior) --- */
-        .additional-gallery-section {
-            margin-top: 3rem;
-            /* Spacing from the featured grid */
-            margin-bottom: 3rem;
-            /* mb-12 */
-        }
-
-        .additional-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-            /* grid-cols-1 */
-            gap: 2rem;
-            /* gap-8 */
-        }
-
-        .additional-gallery-grid .gallery-item img {
-            height: 16rem;
-            /* fixed height for smaller images */
-        }
-
-
-        /* Packages Section */
-        .packages-section {
-            margin-bottom: 3rem;
-            /* mb-12 */
-            background-color: #f6f2f2;
-            /* Black background for accent */
-            border-radius: 0.5rem;
-            /* rounded-lg */
-            padding: 2rem;
-            /* p-8 */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-            /* shadow-xl */
-        }
-
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-            /* grid-cols-1 */
-            gap: 2rem;
-            /* gap-8 */
-        }
-
-        .package-card {
-            background-color: #1A1A1A;
-            /* Dark background for card */
-            border-radius: 0.5rem;
-            /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            /* shadow-lg */
-            overflow: hidden;
-            /* overflow-hidden */
-            transition-property: transform;
-            transition-duration: 300ms;
-            /* transition duration-300 */
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            /* ease-in-out */
-        }
-
-        .package-card:hover {
-            transform: scale(1.05);
-            /* hover:scale-105 */
-        }
-
-        .package-card img {
-            width: 100%;
-            /* w-full */
-            height: 12rem;
-            /* h-48 */
-            object-fit: cover;
-            /* object-cover */
-        }
-
-        .package-content {
-            padding: 1.5rem;
-            /* p-6 */
-        }
-
-        .package-content h3 {
-            font-size: 1.5rem;
-            /* text-2xl */
-            font-weight: 700;
-            /* font-bold */
-            color: #FFFFFF;
-            /* White text */
-            margin-bottom: 0.5rem;
-            /* mb-2 */
-        }
-
-        .package-content p {
-            color: #FFFFFF;
-            /* White text for readability on dark background */
-            margin-bottom: 1rem;
-            /* mb-4 */
-        }
-
-        .package-content ul {
-            list-style-type: disc;
-            /* list-disc */
-            list-style-position: inside;
-            /* list-inside */
-            color: #FFFFFF;
-            /* White text for readability on dark background */
-            margin-bottom: 1rem;
-            /* mb-4 */
-            padding-left: 0;
-            /* Remove default list padding */
-        }
-
-        .package-content ul li {
-            margin-bottom: 0.25rem;
-            /* A small gap between list items */
-        }
-
-        .package-footer {
-            display: flex;
-            justify-content: space-between;
-            /* justify-between */
-            align-items: center;
-            /* items-center */
-        }
-
-        .package-footer span {
-            color: #FFD700;
-            /* primary-yellow */
-            font-size: 1.875rem;
-            /* text-3xl */
-            font-weight: 700;
-            /* font-bold */
-        }
-
-        .package-footer button {
-            background-color: #FFD700;
-            /* primary-yellow */
-            color: #000000;
-            /* Black text */
-            font-weight: 600;
-            /* font-semibold */
-            padding: 0.5rem 1.5rem;
-            /* py-2 px-6 */
-            border-radius: 9999px;
-            /* rounded-full */
-            border: none;
-            cursor: pointer;
-            transition-property: background-color;
-            transition-duration: 300ms;
-            /* transition duration-300 */
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            /* ease-in-out */
-        }
-
-        .package-footer button:hover {
-            background-color: #FFFFFF;
-            /* White on hover */
-        }
-
-        /* Reviews Section */
-        .reviews-section {
-            margin-bottom: 3rem;
-            /* mb-12 */
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-            /* grid-cols-1 */
-            gap: 2rem;
-            /* gap-8 */
-        }
-
-        .review-card {
-            background-color: #000000;
-            /* Black background for accent */
-            padding: 1.5rem;
-            /* p-6 */
-            border-radius: 0.5rem;
-            /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            /* shadow-lg */
-            display: flex;
-            align-items: flex-start;
-            /* items-start */
-            gap: 1rem;
-            /* space-x-4 */
-        }
-
-        .review-card img {
-            width: 5rem;
-            /* w-20 */
-            height: 5rem;
-            /* h-20 */
-            border-radius: 9999px;
-            /* rounded-full */
-            object-fit: cover;
-            /* object-cover */
-            border: 2px solid #FFD700;
-            /* primary-yellow border */
-        }
-
-        .review-content p.quote {
-            font-size: 1.125rem;
-            /* text-lg */
-            font-style: italic;
-            /* italic */
-            color: #FFFFFF;
-            /* White text for readability on black */
-            margin-bottom: 0.5rem;
-            /* mb-2 */
-        }
-
-        .review-content p.author {
-            font-weight: 700;
-            /* font-bold */
-            color: #FFFFFF;
-            /* White text */
-        }
-
-        .review-stars {
-            display: flex;
-            color: #FFD700;
-            /* primary-yellow */
-            font-size: 1.25rem;
-            /* text-xl */
-            margin-top: 0.5rem;
-            /* mt-2 */
-        }
-
-        /* Responsive Adjustments */
-        @media (min-width: 768px) {
-
-            /* md breakpoint */
-            /* Shared grid styles for gallery and packages */
-            .additional-gallery-grid,
-            .packages-grid,
-            .reviews-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                /* 2 columns for medium screens */
-            }
-        }
-
-        @media (min-width: 1024px) {
-
-            /* lg breakpoint */
-            .additional-gallery-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                /* 3 columns for large screens */
-            }
-
-            /* Packages grid remains 2 columns from md breakpoint */
-        }
-    </style>
+    </script>
 </head>
 
-<body>
-    <!-- Header -->
+<body class="bg-primary-bg text-secondary-text font-sans leading-normal">
     <nav class="h-24 flex bg-[--primary-color] justify-between items-center">
         <div class="w-12 ml-6">
-            <a href="./index.html"><img src="./media/logo-2.png" alt="" style="clip-path: circle()" class="w-full" /></a>
+            <img src="./media/logo-2.png" alt="" style="clip-path: circle()" class="w-full" />
         </div>
         <input type="checkbox" id="sidebar-active" class="peer hidden" />
         <label for="sidebar-active" class="p-5 sm:hidden">
@@ -513,50 +70,54 @@
                 href="./contactus.html">Contact</a>
         </div>
     </nav>
-    <main class="container">
-        <!-- Featured Gallery Grid Section (matches provided picture layout) -->
-        <section class="featured-gallery-section">
-            <h2 class="section-title">Our Featured Destinations</h2>
-            <div class="featured-gallery-grid">
-                <!-- Top Left -->
-                <div class="featured-gallery-item featured-gallery-item-small">
+
+
+    <main class="container max-w-8xl mx-auto px-4 py-8">
+
+        <section class="mb-12">
+            <h2 class="pt-8 pb-4 text-4xl font-bold text-center text-dark-text mb-8">Our Featured Destinations</h2>
+            <div
+                class="grid grid-cols-1 md:grid-cols-featured-lg md:grid-rows-featured-lg gap-6 rounded-lg overflow-hidden shadow-xl">
+                <div class="relative overflow-hidden cursor-pointer shadow-lg group">
                     <img src="https://autourasia.com/uploads/Travel-Guide-Thailand/12-months-in-thailand/thailand-in-february/700-weather-in-thailand-in-february.jpg"
-                        alt="Beach in February, Thailand">
-                    <div class="featured-gallery-caption">
-                        <h3>Beach in February</h3>
-                        <p>Thailand</p>
+                        alt="Beach in February, Thailand"
+                        class="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105 md:col-start-1 md:row-start-1">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Beach in February</h3>
+                        <p class="text-lg text-primary-yellow">Thailand</p>
                     </div>
                 </div>
-                <!-- Large Center -->
-                <div class="featured-gallery-item featured-gallery-item-large">
-                    <img src="https://backiee.com/static/wallpapers/560x315/365866.jpg" alt="Explore and Sailing">
-                    <div class="featured-gallery-caption">
-                        <h3>Explore and Sailing</h3>
-                        <p>Explore the Beauty of the Open Sea</p>
+                <div
+                    class="relative overflow-hidden cursor-pointer shadow-lg group md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-3">
+                    <img src="https://backiee.com/static/wallpapers/560x315/365866.jpg" alt="Explore and Sailing"
+                        class="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center p-6">
+                        <h3 class="text-5xl font-bold text-white mb-2 text-center">Explore and Sailing</h3>
+                        <p class="text-2xl text-primary-yellow text-center">Explore the Beauty of the Open Sea</p>
                     </div>
                 </div>
-                <!-- Top Right -->
-                <div class="featured-gallery-item featured-gallery-item-small">
-                    <img src="https://cdn.britannica.com/30/94430-050-D0FC51CD/Niagara-Falls.jpg" alt="Niagara Falls">
-                    <div class="featured-gallery-caption">
-                        <h3>Explore Niagara Falls</h3>
-                        <p>Explore the Beauty</p>
+                <div class="relative overflow-hidden cursor-pointer shadow-lg group">
+                    <img src="https://cdn.britannica.com/30/94430-050-D0FC51CD/Niagara-Falls.jpg" alt="Niagara Falls"
+                        class="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105 md:col-start-3 md:row-start-1">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Explore Niagara Falls</h3>
+                        <p class="text-lg text-primary-yellow">Explore the Beauty</p>
                     </div>
                 </div>
-                <!-- Bottom Left -->
-                <div class="featured-gallery-item featured-gallery-item-small">
+                <div class="relative overflow-hidden cursor-pointer shadow-lg group">
                     <img src="https://blessingtourscr.com/wp-content/uploads/2018/09/Feature-Discover-Costa-Rica-01c-1000x640.jpg"
-                        alt="Costa Rica">
-                    <div class="featured-gallery-caption">
+                        alt="Costa Rica"
+                        class="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105 md:col-start-1 md:row-start-2">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
                         <h3>Discover Costa Rica</h3>
                         <p>Just Beautiful</p>
                     </div>
                 </div>
-                <!-- Bottom Right -->
-                <div class="featured-gallery-item featured-gallery-item-small">
+                <div class="relative overflow-hidden cursor-pointer shadow-lg group">
                     <img src="https://amazingourworld.com/wp-content/uploads/2023/10/Tour-Ha-Noi-%E2%80%93-Ha-Long-%E2%80%93-Hue-Da-Nang-%E2%80%93-Hoi-An-%E2%80%93-Ho-Chi-Minh-%E2%80%93-Mekong-Vinh-Ha-Long-2.jpeg"
-                        alt="Vietnam">
-                    <div class="featured-gallery-caption">
+                        alt="Vietnam"
+                        class="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105 md:col-start-3 md:row-start-2">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
                         <h3>Exploring Vietnam</h3>
                         <p>Explore the Beauty</p>
                     </div>
@@ -564,220 +125,228 @@
             </div>
         </section>
 
-        <!-- Additional Gallery Section (More images in a standard grid) -->
-        <section class="additional-gallery-section">
-            <h2 class="section-title">More Destinations to Discover</h2>
-            <div class="additional-gallery-grid">
-                <!-- Gallery Item 1 -->
-                <div class="gallery-item">
+        <section class="mt-12 mb-12">
+            <h2 class="pt-8 pb-4 text-4xl font-bold text-center text-dark-text mb-8">More Destinations to Discover</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
                     <img src="https://lp-cms-production.imgix.net/2025-02/shutterstock2490320797.jpg?auto=format,compress&q=72&fit=crop"
-                        alt="Iceland">
-                    <div class="gallery-caption">
-                        <h3>Wonders of Iceland</h3>
-                        <p>Land of Fire and Ice</p>
+                        alt="Iceland"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Wonders of Iceland</h3>
+                        <p class="text-lg text-primary-yellow">Land of Fire and Ice</p>
                     </div>
                 </div>
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item">
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
                     <img src="https://tibro.in/blog/wp-content/uploads/2024/10/f671d17b6393a922e4fe959cec5f9a23-1.jpg"
-                        alt="Kenya Safari">
-                    <div class="gallery-caption">
-                        <h3>Safari in Kenya</h3>
-                        <p>Wild Adventures</p>
+                        alt="Kenya Safari"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Safari in Kenya</h3>
+                        <p class="text-lg text-primary-yellow">Wild Adventures</p>
                     </div>
                 </div>
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item">
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
                     <img src="https://images.globalhighlights.com/allpicture/2021/06/bdd9119e11ef437389da5b13_cut_600x550_241_1747741339.jpg"
-                        alt="Ancient Egypt">
-                    <div class="gallery-caption">
-                        <h3>Ancient Egypt Tours</h3>
-                        <p>Uncover History</p>
+                        alt="Ancient Egypt"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Ancient Egypt Tours</h3>
+                        <p class="text-lg text-primary-yellow">Uncover History</p>
                     </div>
                 </div>
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item">
-                    <img src="https://cdn.tourradar.com/s3/serp/1500x800/217209_h9dfKePg.png" alt="Australian Outback">
-                    <div class="gallery-caption">
-                        <h3>Australian Outback</h3>
-                        <p>Vast Wilderness</p>
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
+                    <img src="https://cdn.tourradar.com/s3/serp/1500x800/217209_h9dfKePg.png" alt="Australian Outback"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Australian Outback</h3>
+                        <p class="text-lg text-primary-yellow">Vast Wilderness</p>
                     </div>
                 </div>
-                <!-- Gallery Item 5 -->
-                <div class="gallery-item">
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
                     <img src="https://aex-web.imgix.net/getContentAsset/7459a268-28bd-45f9-bce9-73da10fc8ffb/8e265d97-ee24-47b6-a823-0d8b4ca7c908/Torres-del-Paine-over-the-Pehoe-Lake,-Patagonia;-Shutterstock.jpg?language=en&auto=format&w={width}&fit=cover"
-                        alt="Patagonia">
-                    <div class="gallery-caption">
-                        <h3>Patagonia Trekking</h3>
-                        <p>Rugged Beauty</p>
+                        alt="Patagonia"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Patagonia Trekking</h3>
+                        <p class="text-lg text-primary-yellow">Rugged Beauty</p>
                     </div>
                 </div>
-                <!-- Gallery Item 6 -->
-                <div class="gallery-item">
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
                     <img src="https://www.travelawaits.com/wp-content/uploads/2021/04/7869b2f6d8e68e89909201dfcc4c67869b2.jpg"
-                        alt="Japan Cherry Blossoms">
-                    <div class="gallery-caption">
-                        <h3>Cherry Blossoms</h3>
-                        <p>Japan in Spring</p>
+                        alt="Japan Cherry Blossoms"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Cherry Blossoms</h3>
+                        <p class="text-lg text-primary-yellow">Japan in Spring</p>
                     </div>
                 </div>
-                <!-- Gallery Item 7 -->
-                <div class="gallery-item">
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
                     <img src="https://brazilreports.com/wp-content/uploads/2025/02/33052935440_99a0383c54_c.jpg"
-                        alt="Brazilian Carnival">
-                    <div class="gallery-caption">
-                        <h3>Brazilian Carnival</h3>
-                        <p>Vibrant Celebrations</p>
+                        alt="Brazilian Carnival"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Brazilian Carnival</h3>
+                        <p class="text-lg text-primary-yellow">Vibrant Celebrations</p>
                     </div>
                 </div>
-                <!-- Gallery Item 8 -->
-                <div class="gallery-item">
-                    <img src="https://alpexcursion.com/storage/media/Blog/zermatt-skiing.webp" alt="Alps Skiing">
-                    <div class="gallery-caption">
-                        <h3>Alps Skiing Adventure</h3>
-                        <p>Winter Wonderland</p>
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
+                    <img src="https://alpexcursion.com/storage/media/Blog/zermatt-skiing.webp" alt="Alps Skiing"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Alps Skiing Adventure</h3>
+                        <p class="text-lg text-primary-yellow">Winter Wonderland</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://static.dw.com/image/71832559_605.jpg" alt="Brazilian Carnival">
-                    <div class="gallery-caption">
-                        <h3>Brazilian Carnival</h3>
-                        <p>Vibrant Celebrations</p>
+                <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group">
+                    <img src="https://static.dw.com/image/71832559_605.jpg" alt="Brazilian Carnival"
+                        class="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Brazilian Carnival</h3>
+                        <p class="text-lg text-primary-yellow">Vibrant Celebrations</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Packages Section -->
-        <section class="packages-section">
-            <h2 class="section-title">Our Best Travel Packages</h2>
-            <div class="packages-grid">
-                <!-- Package Card 1 -->
-                <div class="package-card">
+        <section class="mb-12 bg-section-bg rounded-lg p-8 shadow-xl">
+            <h2 class="pt-8 pb-4 text-4xl font-bold text-center text-dark-text mb-8">Our Best Travel Packages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                    class="bg-dark-accent rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
                     <img src="https://miro.medium.com/v2/resize:fit:735/1*pg4tuVXKbsrKcp9ear-OzA.jpeg"
-                        alt="European Adventure">
-                    <div class="package-content">
-                        <h3>European Adventure</h3>
-                        <p>Explore the historic cities and stunning landscapes of Europe.</p>
-                        <ul>
+                        alt="European Adventure" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">European Adventure</h3>
+                        <p class="text-white mb-4">Explore the historic cities and stunning landscapes of Europe.</p>
+                        <ul class="list-disc list-inside text-white mb-4 pl-0">
                             <li>7 Days, 6 Nights</li>
                             <li>Flights & Accommodation</li>
                             <li>Guided Tours</li>
                         </ul>
-                        <div class="package-footer">
-                            <span>$1200</span>
-                            <button>Book Now</button>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary-yellow text-3xl font-bold">$1200</span>
+                            <button
+                                class="bg-primary-yellow text-black font-semibold py-2 px-6 rounded-full border-none cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white"><a
+                                    href="./booking.html">Book
+                                    Now</a></button>
                         </div>
                     </div>
                 </div>
-                <!-- Package Card 2 -->
-                <div class="package-card">
+                <div
+                    class="bg-dark-accent rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
                     <img src="https://www.iwantwallpaper.co.uk/images/muriva-tropical-photo-collage-pattern-paradise-holiday-multi-coloured-wallpaper-p2880-5986_image.jpg"
-                        alt="Tropical Paradise">
-                    <div class="package-content">
-                        <h3>Tropical Paradise</h3>
-                        <p>Relax on pristine beaches and enjoy crystal clear waters.</p>
-                        <ul>
+                        alt="Tropical Paradise" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Tropical Paradise</h3>
+                        <p class="text-white mb-4">Relax on pristine beaches and enjoy crystal clear waters.</p>
+                        <ul class="list-disc list-inside text-white mb-4 pl-0">
                             <li>5 Days, 4 Nights</li>
                             <li>All-Inclusive Resort</li>
                             <li>Water Sports</li>
                         </ul>
-                        <div class="package-footer">
-                            <span>$850</span>
-                            <button>Book Now</button>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary-yellow text-3xl font-bold">$850</span>
+                            <button
+                                class="bg-primary-yellow text-black font-semibold py-2 px-6 rounded-full border-none cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white"><a
+                                    href="./booking.html">Book
+                                    Now</a></button>
                         </div>
                     </div>
                 </div>
-                <!-- Package Card 3 -->
-                <div class="package-card">
+                <div
+                    class="bg-dark-accent rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
                     <img src="https://i.pinimg.com/736x/b8/11/37/b811371bd732652e3feca9825bc85369.jpg"
-                        alt="Mountain Trekking">
-                    <div class="package-content">
-                        <h3>Mountain Trekking</h3>
-                        <p>Conquer majestic peaks and discover breathtaking views.</p>
-                        <ul>
+                        alt="Mountain Trekking" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Mountain Trekking</h3>
+                        <p class="text-white mb-4">Conquer majestic peaks and discover breathtaking views.</p>
+                        <ul class="list-disc list-inside text-white mb-4 pl-0">
                             <li>10 Days, 9 Nights</li>
                             <li>Expert Guides</li>
                             <li>Equipment Provided</li>
                         </ul>
-                        <div class="package-footer">
-                            <span>$1800</span>
-                            <button>Book Now</button>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary-yellow text-3xl font-bold">$1800</span>
+                            <button
+                                class="bg-primary-yellow text-black font-semibold py-2 px-6 rounded-full border-none cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white"><a
+                                    href="./booking.html">Book
+                                    Now</a></button>
                         </div>
                     </div>
                 </div>
-                <!-- Package Card 4 -->
-                <div class="package-card">
+                <div
+                    class="bg-dark-accent rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
                     <img src="https://www.exotravel.com/blog/wp-content/uploads/2018/01/9-photo-collages.jpg"
-                        alt="Asian Cultural Journey">
-                    <div class="package-content">
-                        <h3>Asian Cultural Journey</h3>
-                        <p>Immerse yourself in the rich history and traditions of Asia.</p>
-                        <ul>
+                        alt="Asian Cultural Journey" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Asian Cultural Journey</h3>
+                        <p class="text-white mb-4">Immerse yourself in the rich history and traditions of Asia.</p>
+                        <ul class="list-disc list-inside text-white mb-4 pl-0">
                             <li>8 Days, 7 Nights</li>
                             <li>Cultural Workshops</li>
                             <li>Local Cuisine Tours</li>
                         </ul>
-                        <div class="package-footer">
-                            <span>$1500</span>
-                            <button>Book Now</button>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary-yellow text-3xl font-bold">$1500</span>
+                            <button
+                                class="bg-primary-yellow text-black font-semibold py-2 px-6 rounded-full border-none cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white"><a
+                                    href="./booking.html">Book
+                                    Now</a></button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Reviews Section -->
-        <section class="reviews-section">
-            <h2 class="section-title">What Our Travelers Say</h2>
-            <div class="reviews-grid">
-                <!-- Review Card 1 -->
-                <div class="review-card">
+        <section class="mb-12">
+            <h2 class="pt-8 pb-4 text-4xl font-bold text-center text-dark-text mb-8">What Our Travelers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-black p-6 rounded-lg shadow-lg flex items-start gap-4">
                     <img src="https://images-na.ssl-images-amazon.com/images/S/amzn-author-media-prod/bai2k8bk2rgejfm92uplj1ju1p.jpg"
-                        alt="Avatar">
+                        alt="Avatar" class="w-20 h-20 rounded-full object-cover border-2 border-primary-yellow">
                     <div>
-                        <p class="quote">"Absolutely incredible experience! The itinerary was perfectly planned, and the
-                            guides were fantastic. Highly recommend Wanderlust!"</p>
-                        <p class="author">- Jane Doe, USA</p>
-                        <div class="review-stars">
+                        <p class="text-lg italic text-white mb-2">"Absolutely incredible experience! The itinerary was
+                            perfectly planned, and the guides were fantastic. Highly recommend Wanderlust!"</p>
+                        <p class="font-bold text-white">- Jane Doe, USA</p>
+                        <div class="flex text-primary-yellow text-xl mt-2">
                             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
                         </div>
                     </div>
                 </div>
-                <!-- Review Card 2 -->
-                <div class="review-card">
+                <div class="bg-black p-6 rounded-lg shadow-lg flex items-start gap-4">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjVzlxrAwZ-qGDeXpTh5nwIRxQLdabp0s2jA&s"
-                        alt="Avatar">
+                        alt="Avatar" class="w-20 h-20 rounded-full object-cover border-2 border-primary-yellow">
                     <div>
-                        <p class="quote">"The best vacation I've ever had! Every detail was taken care of, and the
-                            destinations chosen were breathtaking. Can't wait to book my next trip!"</p>
-                        <p class="author">- John Smith, Canada</p>
-                        <div class="review-stars">
+                        <p class="text-lg italic text-white mb-2">"The best vacation I've ever had! Every detail was
+                            taken care of, and the destinations chosen were breathtaking. Can't wait to book my next
+                            trip!"</p>
+                        <p class="font-bold text-white">- John Smith, Canada</p>
+                        <div class="flex text-primary-yellow text-xl mt-2">
                             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
                         </div>
                     </div>
                 </div>
-                <!-- Review Card 3 -->
-                <div class="review-card">
+                <div class="bg-black p-6 rounded-lg shadow-lg flex items-start gap-4">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzQV3xxowQn3ZHvbOd7sl1GjdUFn7ManNN-Q&s"
-                        alt="Avatar">
+                        alt="Avatar" class="w-20 h-20 rounded-full object-cover border-2 border-primary-yellow">
                     <div>
-                        <p class="quote">"Seamless travel experience from start to finish. The team was very responsive
-                            and made sure all our needs were met. Truly a memorable trip."</p>
-                        <p class="author">- Maria Garcia, Spain</p>
-                        <div class="review-stars">
+                        <p class="text-lg italic text-white mb-2">"Seamless travel experience from start to finish. The
+                            team was very responsive and made sure all our needs were met. Truly a memorable trip."</p>
+                        <p class="font-bold text-white">- Maria Garcia, Spain</p>
+                        <div class="flex text-primary-yellow text-xl mt-2">
                             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
                         </div>
                     </div>
                 </div>
-                <!-- Review Card 4 -->
-                <div class="review-card">
-                    <img src="https://i.pinimg.com/736x/1a/40/ea/1a40ea4744805cb595aa8462629cb92d.jpg" alt="Avatar">
+                <div class="bg-black p-6 rounded-lg shadow-lg flex items-start gap-4">
+                    <img src="https://i.pinimg.com/736x/1a/40/ea/1a40ea4744805cb595aa8462629cb92d.jpg" alt="Avatar"
+                        class="w-20 h-20 rounded-full object-cover border-2 border-primary-yellow">
                     <div>
-                        <p class="quote">"Fantastic value for money. The packages offered great variety and comfort.
-                            Will definitely recommend to friends and family."</p>
-                        <p class="author">- David Lee, Australia</p>
-                        <div class="review-stars">
+                        <p class="text-lg italic text-white mb-2">"Fantastic value for money. The packages offered great
+                            variety and comfort. Will definitely recommend to friends and family."</p>
+                        <p class="font-bold text-white">- David Lee, Australia</p>
+                        <div class="flex text-primary-yellow text-xl mt-2">
                             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
                         </div>
                     </div>
@@ -786,165 +355,150 @@
         </section>
     </main>
     <!-- Footer -->
-  <footer class="bg-gray-900 text-white pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-        <!-- Brand Column -->
-        <div class="space-y-4">
-          <div class="flex items-center space-x-2">
-            <img src="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg" alt="TraviZ Logo"
-              class="w-12 h-12 rounded-full object-cover border border-yellow-500" />
-            <span class="text-2xl font-bold text-yellow-500">TraviZ</span>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Creating unforgettable journeys and experiences around the globe
-            since 2015.
-          </p>
-          <div class="flex space-x-4">
-            <a href="https://www.facebook.com/" class="text-gray-400 hover:text-yellow-500 transition">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://x.com/" class="text-gray-400 hover:text-yellow-500 transition">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/" class="text-gray-400 hover:text-yellow-500 transition">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/" class="text-gray-400 hover:text-yellow-500 transition">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-            Explore
-          </h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="./gallery.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Destinations</a>
-            </li>
-            <li>
-              <a href="./gallery.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Special Offers</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Travel Guides</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Blog</a>
-            </li>
-          </ul>
-        </div>
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg"
+                            alt="TraviZ Logo" class="w-12 h-12 rounded-full object-cover border border-yellow-500">
+                        <span class="text-2xl font-bold text-yellow-500">TraviZ</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Creating unforgettable journeys and experiences around the globe since 2015.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <!-- Support -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-            Support
-          </h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="./contactus.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Help Center</a>
-            </li>
-            <li>
-              <a href="./contactus.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Contact Us</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Privacy Policy</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Terms of Service</a>
-            </li>
-          </ul>
-        </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">Explore</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                Destinations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                Special Offers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                Travel Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                Blog</a></li>
+                    </ul>
+                </div>
 
-        <!-- Newsletter -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-            Newsletter
-          </h3>
-          <p class="text-gray-400 text-sm mb-4">
-            Subscribe to get special offers, travel tips, and destination
-            inspiration.
-          </p>
-          <form class="flex flex-col space-y-3">
-            <input type="email" placeholder="Your email address"
-              class="px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" />
-            <button type="submit"
-              class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition flex items-center justify-center">
-              Subscribe
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                </path>
-              </svg>
-            </button>
-          </form>
-        </div>
-      </div>
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                Terms of Service</a></li>
+                    </ul>
+                </div>
 
-      <!-- Bottom Bar -->
-      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <div class="text-gray-500 text-sm mb-4 md:mb-0">
-          © 2025 TraviZ. All rights reserved.
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">Newsletter</h3>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Subscribe to get special offers, travel tips, and destination inspiration.
+                    </p>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Your email address"
+                            class="px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                        <button type="submit"
+                            class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition flex items-center justify-center">
+                            Subscribe
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 TraviZ. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Sitemap</a>
+                </div>
+                <div class="flex items-center mt-4 md:mt-0">
+                    <span class="text-gray-500 text-sm mr-2">Payment Methods:</span>
+                    <div class="flex space-x-2">
+                        <i class="fab fa-cc-visa text-gray-400 hover:text-yellow-500 transition"></i>
+                        <i class="fab fa-cc-mastercard text-gray-400 hover:text-yellow-500 transition"></i>
+                        <i class="fab fa-cc-paypal text-gray-400 hover:text-yellow-500 transition"></i>
+                        <i class="fab fa-cc-apple-pay text-gray-400 hover:text-yellow-500 transition"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="flex space-x-6">
-          <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">About</a>
-          <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Terms of Service</a>
-          <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Sitemap</a>
-        </div>
-        <div class="flex items-center mt-4 md:mt-0">
-          <span class="text-gray-500 text-sm mr-2">Payment Methods:</span>
-          <div class="flex space-x-2">
-            <i class="fab fa-cc-visa text-gray-400 hover:text-yellow-500 transition"></i>
-            <i class="fab fa-cc-mastercard text-gray-400 hover:text-yellow-500 transition"></i>
-            <i class="fab fa-cc-paypal text-gray-400 hover:text-yellow-500 transition"></i>
-            <i class="fab fa-cc-apple-pay text-gray-400 hover:text-yellow-500 transition"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 </body>
 
 </html>
