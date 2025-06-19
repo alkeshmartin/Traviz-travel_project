@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -25,7 +25,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body id="top">
   <!-- Header -->
   <nav class="h-24 flex bg-[--primary-color] justify-between items-center">
     <div class="w-12 ml-6">
@@ -59,7 +59,7 @@
   <main class="min-h-screen flex items-center justify-center p-9 bg-gray-100">
     <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 bg-gray-300 rounded-xl overflow-hidden">
       <!-- Left Column: Image -->
-      <div class="bg-black h-64 lg:h-auto">
+      <div class="bg-black h-64 lg:h-full">
         <img src="./media/beautiful-collage-travel-concept.jpg" alt="Travel India" class="w-full h-full object-cover" />
       </div>
 
@@ -67,7 +67,6 @@
       <div class="p-6 sm:p-8 space-y-4">
         <form id="bookingForm" class="space-y-4 text-sm">
           <legend class="text-2xl font-semibold text-orange-600 mb-2">Booking Details</legend>
-
           <div class="flex flex-col sm:flex-row gap-4">
             <input type="text" placeholder="First Name" required class="flex-1 border border-gray-300 p-2 rounded" />
             <input type="text" placeholder="Last Name" required class="flex-1 border border-gray-300 p-2 rounded" />
@@ -123,6 +122,14 @@
     </div>
   </main>
 
+  <!-- Scroll to Top Button -->
+  <a
+  href="#top"
+  class="fixed bottom-5 right-5 bg-[#EAB308] text-black p-3 rounded-full shadow-md hover:bg-orange-500 transition-all z-50"
+>
+  <i class="fas fa-arrow-up"></i>
+</a>
+
   <!-- Footer -->
   <footer class="bg-gray-900 text-white pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,7 +137,7 @@
         <!-- Brand Column -->
         <div class="space-y-4">
           <div class="flex items-center space-x-2">
-            <img src="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg" alt="TraviZ Logo"
+            <img src="./media/media/logo-1.png" alt="TraviZ Logo"
               class="w-12 h-12 rounded-full object-cover border border-yellow-500" />
             <span class="text-2xl font-bold text-yellow-500">TraviZ</span>
           </div>
@@ -281,6 +288,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </footer>
 
