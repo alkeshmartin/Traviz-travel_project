@@ -1,356 +1,612 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link
+      rel="icon"
+      href="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg"
+      type="image/x-icon"
+    />
+    <!-- Google Fonts   -->
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About us</title>
-  <link rel="icon" href="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg" type="image/x-icon" />
-  <!-- Google Fonts   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
+    <!-- Font-Awesome-CDN   -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <!-- Font-Awesome-CDN   -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom font-->
 
-  <!-- custom font-->
+    <link rel="stylesheet" href="./nav.css" />
 
-  <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="style.css" />
 
-  <link rel="stylesheet" href="style.css" />
+    <!--! tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-  <!--! tailwind css -->
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-slate-100">
-  <!-- ! navbar -->
-  <nav class="h-24 flex bg-[--primary-color] justify-between items-center">
-    <div class="w-12 ml-6">
-      <a href="./index.html"><img src="./media/logo-2.png" alt="" style="clip-path: circle()" class="w-full" /></a>
-    </div>
-    <input type="checkbox" id="sidebar-active" class="peer hidden" />
-    <label for="sidebar-active" class="p-5 sm:hidden">
-      <i class="fa-solid fa-bars fa-xl text-[--text-color]"></i>
-    </label>
-
-    <div
-      class="h-full w-100 flex flex-col sm:flex-row items-start md:items-center fixed sm:static top-0 -right-full z-10 bg-[--primary-color] transition-all duration-1000 ease-out peer-checked:right-0 linkes-container min-w-72 shadow-lg sm:shadow-none shadow-black">
+  <body class="bg-slate-100" id="top">
+    <!-- ! navbar -->
+    <nav class="h-24 flex bg-[--primary-color] justify-between items-center">
+      <div class="w-12 ml-6">
+        <a href="./index.html"
+          ><img
+            src="./media/logo-2.png"
+            alt=""
+            style="clip-path: circle()"
+            class="w-full"
+        /></a>
+      </div>
+      <input type="checkbox" id="sidebar-active" class="peer hidden" />
       <label for="sidebar-active" class="p-5 sm:hidden">
-        <i class="fa-solid fa-xmark fa-2xl text-[--text-color]"></i>
+        <i class="fa-solid fa-bars fa-xl text-[--text-color]"></i>
       </label>
 
-      <a class="sm:h-full w-full py-4 px-6 sm:px-5 flex justify-start items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
-        href="./index.html">Home</a>
-      <a class="sm:h-full w-full py-4 px-6 sm:px-5 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
-        href="./gallery.html">Gallery</a>
-      <a class="sm:h-full w-full py-4 px-6 sm:px-5 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
-        href="./booking.html">Booking</a>
-      <a class="sm:h-full w-full py-4 px-6 sm:px-5 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
-        href="./about.html">About</a>
-      <a class="sm:h-full w-full py-4 px-6 sm:px-5 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
-        href="./contactus.html">Contact</a>
-    </div>
-  </nav>
-
-  <!-- ! header -->
-  <header
-    class="relative h-[50vh] lg:h-[calc(100vh-3.5rem)] bg-[url(./media/media/thailand.jpg)] bg-no-repeat bg-cover bg-bottom after:content-[''] after:w-full after:h-full after:bg-black after:opacity-40 after:absolute">
-  </header>
-  <h1
-    class="absolute left-[50%] top-[30%] lg:top-[50%] text-white font-bold text-4xl md:text-7xl lg:text-8xl xl:text-9xl translate-x-[-50%] translate-y-[-50%]">
-    About us
-  </h1>
-
-  <!--! section  -->
-
-  <section class="grid lg:grid-cols-2 bg-slate-100 pt-14 lg:mb-12">
-    <div class="relative min-h-80">
       <div
-        class="absolute left-8 sm:left-[10%] top-[10%] lg:left-[5%] lg:top-[10%] h-[40vh] md:h-[80%] max-w-[80%] mx-auto sm:mx-0 md:max-w-[350px] mt-8 sm:translate-x-[25%] translate-x-0 hover:scale-105 hover:z-50 transition-all duration-700 lg:border-white border-4 rounded-2xl">
-        <img class="rounded-2xl block max-w-[100%] object-cover h-full" src="./media/media/tourist-1.jpg" alt="" />
+        class="h-full w-100 flex flex-col sm:flex-row items-start md:items-center fixed sm:static top-0 -right-full z-10 bg-[--primary-color] transition-all duration-1000 ease-out peer-checked:right-0 linkes-container min-w-72 shadow-lg sm:shadow-none shadow-black"
+      >
+        <label for="sidebar-active" class="p-5 sm:hidden">
+          <i class="fa-solid fa-xmark fa-2xl text-[--text-color]"></i>
+        </label>
+
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-5 flex justify-start items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
+          href="./index.html"
+          >Home</a
+        >
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-5 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
+          href="./gallery.html"
+          >Gallery</a
+        >
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-5 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
+          href="./booking.html"
+          >Booking</a
+        >
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-5 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
+          href="./about.html"
+          >About</a
+        >
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-5 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color]"
+          href="./contactus.html"
+          >Contact</a
+        >
       </div>
+    </nav>
+
+    <!-- ! header -->
+    <header
+      class="relative h-[50vh] lg:h-[calc(100vh-3.5rem)] bg-[url(./media/media/thailand.jpg)] bg-no-repeat bg-cover bg-bottom after:content-[''] after:w-full after:h-full after:bg-black after:opacity-40 after:absolute"
+    ></header>
+    <h1
+      class="absolute left-[50%] top-[30%] lg:top-[50%] text-white font-bold text-4xl md:text-7xl lg:text-8xl xl:text-9xl translate-x-[-50%] translate-y-[-50%]"
+    >
+      About us
+    </h1>
+
+    <!--! section  -->
+
+    <section class="grid lg:grid-cols-2 bg-slate-100 pt-14 lg:mb-12">
+      <div class="relative min-h-80">
+        <div
+          class="absolute left-8 sm:left-[10%] top-[10%] lg:left-[5%] lg:top-[10%] h-[40vh] md:h-[80%] max-w-[80%] mx-auto sm:mx-0 md:max-w-[350px] mt-8 sm:translate-x-[25%] translate-x-0 hover:scale-105 hover:z-50 transition-all duration-700 lg:border-white border-4 rounded-2xl"
+        >
+          <img
+            class="rounded-2xl block max-w-[100%] object-cover h-full"
+            src="./media/media/tourist-1.jpg"
+            alt=""
+          />
+        </div>
+        <div
+          class="absolute left-[20%] sm:left-[40%] lg:left-[40%] top-[30%] md:top-[30%] h-[40vh] md:h-[80%] max-w-[90%] mx-auto sm:mx-0 md:max-w-[350px] m-4 sm:translate-x-[25%] lg:translate-x-0 hover:scale-105 transition-all duration-700"
+        >
+          <img
+            class="border-white md:border-8 rounded-2xl block max-w-[100%] object-cover h-full"
+            src="./media/media/tourist-2.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div>
+        <div class="px-4 lg:pl-12 py-48 md:py-12 flex flex-col gap-8 sm:gap-6">
+          <h2 class="text-[#3AB4D2] text-4xl">Get About us</h2>
+          <h2
+            class="capitalize text-black text-5xl lg:text-6xl font-semibold leading-tight"
+          >
+            we're strived only for the best in the world
+          </h2>
+          <p class="font-medium italic opacity-90">
+            we believe that travel is more than just visiting places—it's about
+            experiences that last a lifetime. Whether you're searching for
+            breathtaking destinations, curated adventures, or seamless bookings,
+            we’re here to make every journey effortless and memorable.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 sm-gap-4 px-4">
+            <div class="flex gap-2 items-center max-w-56">
+              <i class="fa-solid fa-check fa-xl text-[#3AB4D2]"></i>
+              <span class="capitalize text-sm font-medium"
+                >Easy booking system</span
+              >
+            </div>
+            <div class="max-w-56">
+              <span class="capitalize text-[.8rem] font-medium"
+                >our hotel also pride itself on offering exceptional
+                services</span
+              >
+            </div>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-check fa-xl text-[#3AB4D2]"></i>
+              <span class="capitalize text-sm font-medium"
+                >Easy booking system</span
+              >
+            </div>
+            <div>
+              <span class="capitalize text-[.8rem] font-medium"
+                >our hotel also pride itself on offering exceptional
+                services</span
+              >
+            </div>
+          </div>
+
+          <a
+            href="./top-destination.html"
+            class="flex justify-center gap-2 items-center ml-4 shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-yellow-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group max-w-36"
+          >
+            Deals
+            <svg
+              class="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
+              viewBox="0 0 16 19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                class="fill-gray-800 group-hover:fill-gray-800"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--! section  -->
+    <section class="grid md:grid-cols-2 bg-slate-100 md:py-14 mb-12">
       <div
-        class="absolute left-[20%] sm:left-[40%] lg:left-[40%] top-[30%] md:top-[30%] h-[40vh] md:h-[80%] max-w-[90%] mx-auto sm:mx-0 md:max-w-[350px] m-4 sm:translate-x-[25%] lg:translate-x-0 hover:scale-105 transition-all duration-700">
-        <img class="border-white md:border-8 rounded-2xl block max-w-[100%] object-cover h-full"
-          src="./media/media/tourist-2.jpg" alt="" />
-      </div>
-    </div>
-    <div>
-      <div class="px-4 lg:pl-12 py-48 md:py-12 flex flex-col gap-8 sm:gap-6">
-        <h2 class="text-[#3AB4D2] text-4xl">Get About us</h2>
-        <h2 class="capitalize text-black text-5xl lg:text-6xl font-semibold leading-tight">
-          we're strived only for the best in the world
+        class="pl-4 md:pl-8 lg:pl-12 py-10 md:py-12 flex flex-col gap-8 sm:gap-6"
+      >
+        <h2 class="text-[#3AB4D2] text-2xl lg:text-4xl capitalize">
+          are you ready to travel
+        </h2>
+        <h2
+          class="capitalize text-black text-4xl lg:text-6xl font-semibold leading-tight"
+          style="line-height: 1.2"
+        >
+          World leading online tour booking platform
         </h2>
         <p class="font-medium italic opacity-90">
-          we believe that travel is more than just visiting places—it's about
-          experiences that last a lifetime. Whether you're searching for
-          breathtaking destinations, curated adventures, or seamless bookings,
-          we’re here to make every journey effortless and memorable.
+          We’d love to hear from you! Whether you have a question about your
+          next adventure, need help with booking, or just want to say hello —
+          our team is here to help.
         </p>
 
         <div class="grid grid-cols-2 gap-6 sm-gap-4 px-4">
-          <div class="flex gap-2 items-center max-w-56">
-            <i class="fa-solid fa-check fa-xl text-[#3AB4D2]"></i>
-            <span class="capitalize text-sm font-medium">Easy booking system</span>
+          <div class="flex items-center gap-6">
+            <div class="w-12 lg:w-16 bg-orange-500 rounded-full">
+              <img
+                class="w-full p-2 object-cover"
+                src="./media/media/family.png"
+                alt=""
+              />
+            </div>
+            <span class="capitalize font-medium text-sm"
+              >Most advetures <br />
+              tour ever</span
+            >
           </div>
-          <div class="max-w-56">
-            <span class="capitalize text-[.8rem] font-medium">our hotel also pride itself on offering
-              exceptional
-              services</span>
+
+          <div
+            class="border-l-2 border-orange-500 px-4 py-2 capitalize font-medium text-sm"
+          >
+            there are many variation of passages of available
           </div>
-          <div class="flex gap-2 items-center">
-            <i class="fa-solid fa-check fa-xl text-[#3AB4D2]"></i>
-            <span class="capitalize text-sm font-medium">Easy booking system</span>
+
+          <div class="flex items-center gap-6">
+            <div class="w-12 lg:w-16 bg-orange-500 rounded-full">
+              <img
+                class="w-full object-cover p-2"
+                src="./media/media/tourism.png"
+                alt=""
+              />
+            </div>
+            <span class="capitalize font-medium text-sm"
+              >Most advetures <br />
+              tour ever</span
+            >
           </div>
-          <div>
-            <span class="capitalize text-[.8rem] font-medium">our hotel also pride itself on offering
-              exceptional
-              services</span>
+          <div
+            class="border-l-2 border-orange-500 px-4 py-2 capitalize font-medium text-sm"
+          >
+            there are many variation of passages of available
           </div>
         </div>
 
-        <a href="./booking.html"
-          class="flex justify-center gap-2 items-center ml-4 shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-yellow-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group max-w-36">
-          Explore
+        <a
+          href="./contactus.html"
+          class="flex justify-center gap-2 items-center ml-4 shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-yellow-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group max-w-48"
+        >
+          Contact us
           <svg
             class="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
-            viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+            viewBox="0 0 16 19"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-              class="fill-gray-800 group-hover:fill-gray-800"></path>
+              class="fill-gray-800 group-hover:fill-gray-800"
+            ></path>
           </svg>
         </a>
       </div>
-    </div>
-  </section>
 
-  <!--! section  -->
-  <section class="grid md:grid-cols-2 bg-slate-100 md:py-14 mb-12">
-    <div class="pl-4 md:pl-8 lg:pl-12 py-10 md:py-12 flex flex-col gap-8 sm:gap-6">
-      <h2 class="text-[#3AB4D2] text-2xl lg:text-4xl capitalize">
-        are you ready to travel
-      </h2>
-      <h2 class="capitalize text-black text-4xl lg:text-6xl font-semibold leading-tight" style="line-height: 1.2">
-        World leading online tour booking platform
-      </h2>
-      <p class="font-medium italic opacity-90">
-        We’d love to hear from you! Whether you have a question about your
-        next adventure, need help with booking, or just want to say hello —
-        our team is here to help.
-      </p>
+      <div class="p-8">
+        <img
+          class="block object-cover aspect-[1]"
+          src="./media/media/full-shot-smiley-people-sitting-baggage.jpg"
+          alt=""
+        />
+      </div>
+    </section>
 
-      <div class="grid grid-cols-2 gap-6 sm-gap-4 px-4">
-        <div class="flex items-center gap-6">
-          <div class="w-12 lg:w-16 bg-orange-500 rounded-full">
-            <img class="w-full p-2 object-cover" src="./media/media/family.png" alt="" />
+    <!-- Scroll to Top Button -->
+    <a
+      href="#top"
+      class="fixed bottom-5 right-5 bg-[#EAB308] text-black p-3 rounded-full shadow-md hover:bg-orange-500 transition-all z-50"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <!-- Brand Column -->
+          <div class="space-y-4">
+            <div class="flex items-center space-x-2">
+              <img
+                src="./media/media/logo-1.png"
+                alt="TraviZ Logo"
+                class="w-12 h-12 rounded-full object-cover border border-yellow-500"
+              />
+              <span class="text-2xl font-bold text-yellow-500">TraviZ</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Creating unforgettable journeys and experiences around the globe
+              since 2015.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.facebook.com/"
+                class="text-gray-400 hover:text-yellow-500 transition"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://x.com/"
+                class="text-gray-400 hover:text-yellow-500 transition"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                class="text-gray-400 hover:text-yellow-500 transition"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/"
+                class="text-gray-400 hover:text-yellow-500 transition"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
           </div>
-          <span class="capitalize font-medium text-sm">Most advetures <br />
-            tour ever</span>
-        </div>
 
-        <div class="border-l-2 border-orange-500 px-4 py-2 capitalize font-medium text-sm">
-          there are many variation of passages of available
-        </div>
-
-        <div class="flex items-center gap-6">
-          <div class="w-12 lg:w-16 bg-orange-500 rounded-full">
-            <img class="w-full object-cover p-2" src="./media/media/tourism.png" alt="" />
+          <!-- Quick Links -->
+          <div>
+            <h3
+              class="text-lg font-semibold mb-4 text-white uppercase tracking-wider"
+            >
+              Explore
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./gallery.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Destinations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./gallery.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Special Offers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Travel Guides</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Blog</a
+                >
+              </li>
+            </ul>
           </div>
-          <span class="capitalize font-medium text-sm">Most advetures <br />
-            tour ever</span>
+
+          <!-- Support -->
+          <div>
+            <h3
+              class="text-lg font-semibold mb-4 text-white uppercase tracking-wider"
+            >
+              Support
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./contactus.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./contactus.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h3
+              class="text-lg font-semibold mb-4 text-white uppercase tracking-wider"
+            >
+              Newsletter
+            </h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Subscribe to get special offers, travel tips, and destination
+              inspiration.
+            </p>
+            <form class="flex flex-col space-y-3">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+              />
+              <button
+                type="submit"
+                class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition flex items-center justify-center"
+              >
+                Subscribe
+                <svg
+                  class="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
-        <div class="border-l-2 border-orange-500 px-4 py-2 capitalize font-medium text-sm">
-          there are many variation of passages of available
-        </div>
-      </div>
 
-      <a href="./contactus.html"
-        class="flex justify-center gap-2 items-center ml-4 shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-yellow-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group max-w-48">
-        Contact us
-        <svg
-          class="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
-          viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-            class="fill-gray-800 group-hover:fill-gray-800"></path>
-        </svg>
-      </a>
-    </div>
-
-    <div class="p-8">
-      <img class="block object-cover aspect-[1]" src="./media/media/full-shot-smiley-people-sitting-baggage.jpg"
-        alt="" />
-    </div>
-  </section>
-
-  <!-- ! section -->
-</body>
-<!-- Footer -->
-<footer class="bg-gray-900 text-white pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-      <!-- Brand Column -->
-      <div class="space-y-4">
-        <div class="flex items-center space-x-2">
-          <img src="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg" alt="TraviZ Logo"
-            class="w-12 h-12 rounded-full object-cover border border-yellow-500" />
-          <span class="text-2xl font-bold text-yellow-500">TraviZ</span>
-        </div>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          Creating unforgettable journeys and experiences around the globe
-          since 2015.
-        </p>
-        <div class="flex space-x-4">
-          <a href="https://www.facebook.com/" class="text-gray-400 hover:text-yellow-500 transition">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://x.com/" class="text-gray-400 hover:text-yellow-500 transition">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com/" class="text-gray-400 hover:text-yellow-500 transition">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/" class="text-gray-400 hover:text-yellow-500 transition">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-          Explore
-        </h3>
-        <ul class="space-y-3">
-          <li>
-            <a href="./gallery.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-              <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              Destinations</a>
-          </li>
-          <li>
-            <a href="./gallery.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-              <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              Special Offers</a>
-          </li>
-          <li>
-            <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-              <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              Travel Guides</a>
-          </li>
-          <li>
-            <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-              <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              Blog</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Support -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-          Support
-        </h3>
-        <ul class="space-y-3">
-          <li>
-            <a href="./contactus.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-              <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              Help Center</a>
-          </li>
-          <li>
-            <a href="./contactus.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-              <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              Contact Us</a>
-          </li>
-          <li>
-            <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-              <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              Privacy Policy</a>
-          </li>
-          <li>
-            <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-              <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              Terms of Service</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Newsletter -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-          Newsletter
-        </h3>
-        <p class="text-gray-400 text-sm mb-4">
-          Subscribe to get special offers, travel tips, and destination
-          inspiration.
-        </p>
-        <form class="flex flex-col space-y-3">
-          <input type="email" placeholder="Your email address"
-            class="px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" />
-          <button type="submit"
-            class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition flex items-center justify-center">
-            Subscribe
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-              </path>
-            </svg>
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-      <div class="text-gray-500 text-sm mb-4 md:mb-0">
-        © 2025 TraviZ. All rights reserved.
-      </div>
-      <div class="flex space-x-6">
-        <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">About</a>
-        <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Terms of Service</a>
-        <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Sitemap</a>
-      </div>
-      <div class="flex items-center mt-4 md:mt-0">
-        <span class="text-gray-500 text-sm mr-2">Payment Methods:</span>
-        <div class="flex space-x-2">
-          <i class="fab fa-cc-visa text-gray-400 hover:text-yellow-500 transition"></i>
-          <i class="fab fa-cc-mastercard text-gray-400 hover:text-yellow-500 transition"></i>
-          <i class="fab fa-cc-paypal text-gray-400 hover:text-yellow-500 transition"></i>
-          <i class="fab fa-cc-apple-pay text-gray-400 hover:text-yellow-500 transition"></i>
+        <!-- Bottom Bar -->
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <div class="text-gray-500 text-sm mb-4 md:mb-0">
+            © 2025 TraviZ. All rights reserved.
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-500 hover:text-yellow-500 transition text-sm"
+              >About</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 hover:text-yellow-500 transition text-sm"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 hover:text-yellow-500 transition text-sm"
+              >Sitemap</a
+            >
+          </div>
+          <div class="flex items-center mt-4 md:mt-0">
+            <span class="text-gray-500 text-sm mr-2">Payment Methods:</span>
+            <div class="flex space-x-2">
+              <i
+                class="fab fa-cc-visa text-gray-400 hover:text-yellow-500 transition"
+              ></i>
+              <i
+                class="fab fa-cc-mastercard text-gray-400 hover:text-yellow-500 transition"
+              ></i>
+              <i
+                class="fab fa-cc-paypal text-gray-400 hover:text-yellow-500 transition"
+              ></i>
+              <i
+                class="fab fa-cc-apple-pay text-gray-400 hover:text-yellow-500 transition"
+              ></i>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
-
+    </footer>
+  </body>
 </html>
