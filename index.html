@@ -1,42 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TraviZ</title>
+    <link
+      rel="icon"
+      href="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg"
+      type="image/x-icon"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TraviZ</title>
-  <link rel="icon" href="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg" type="image/x-icon" />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- CSS -->
-  <link rel="stylesheet" href="./style.css" />
-</head>
+  <body id="top">
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
 
-<body>
-  <style>
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out backwards;
       }
-    }
 
-    .animate-fade-in-up {
-      animation: fadeInUp 0.8s ease-out backwards;
-    }
-
-    /* 
+      /* 
   @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,337 +58,474 @@
     animation: marquee 15s linear infinite;
   }
 } */
-  </style>
+    </style>
 
-  <!-- Header -->
-  <nav class="h-24 flex bg-[--primary-color] justify-between items-center">
-    <div class="w-12 ml-6">
-      <a href="./index.html"><img src="./media/logo-2.png" alt="" style="clip-path: circle()" class="w-full" /></a>
-    </div>
-    <input type="checkbox" id="sidebar-active" class="peer hidden" />
-    <label for="sidebar-active" class="p-5 sm:hidden">
-      <i class="fa-solid fa-bars fa-xl text-[--text-color]"></i>
-    </label>
-
-    <div
-      class="h-full w-100 flex flex-col sm:flex-row items-start md:items-center fixed sm:static top-0 -right-full z-10 bg-[--primary-color] transition-all duration-1000 ease-out peer-checked:right-0 linkes-container min-w-72 shadow-lg sm:shadow-none shadow-black">
+    <!-- Header -->
+    <nav class="h-24 flex bg-[--primary-color] justify-between items-center">
+      <div class="w-12 ml-6">
+        <a href="./index.html"
+          ><img
+            src="./media/logo-2.png"
+            alt=""
+            style="clip-path: circle()"
+            class="w-full"
+        /></a>
+      </div>
+      <input type="checkbox" id="sidebar-active" class="peer hidden" />
       <label for="sidebar-active" class="p-5 sm:hidden">
-        <i class="fa-solid fa-xmark fa-2xl text-[--text-color]"></i>
+        <i class="fa-solid fa-bars fa-xl text-[--text-color]"></i>
       </label>
 
-      <a class="sm:h-full w-full py-4 px-6 sm:px-4 flex justify-start items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
-        href="./index.html">Home</a>
-      <a class="sm:h-full w-full py-4 px-6 sm:px-4 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
-        href="./gallery.html">Gallery</a>
-      <a class="sm:h-full w-full py-4 px-6 sm:px-4 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
-        href="./booking.html">Booking</a>
-      <a class="sm:h-full w-full py-4 px-6 sm:px-2 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
-        href="./about.html">About</a>
-      <a class="sm:h-full py-4 px-6 sm:px-4 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
-        href="./contactus.html">Contact</a>
-      <a href="./login.html"
-        class="bg-orange-500 py-2 px-2 text-slate-100 rounded hover:bg-orange-600 transition duration-300 w-40 md:min-w-28 text-center font-medium sm:mr-4 self-center mt-6 sm:mt-0 capitalize text-sm md:text-base whitespace-nowrap">
-        Log in
-      </a>
-      <a href="./signin.html"
-        class="bg-orange-500 py-2 px-2 text-slate-100 rounded hover:bg-orange-600 transition duration-300 w-40 mt-6 sm:mt-0 md:min-w-28 text-center font-medium sm:mr-4 self-center capitalize text-sm md:text-base whitespace-nowrap">
-        sign up
-      </a>
+      <div
+        class="h-full w-100 flex flex-col sm:flex-row items-start md:items-center fixed sm:static top-0 -right-full z-10 bg-[--primary-color] transition-all duration-1000 ease-out peer-checked:right-0 linkes-container min-w-72 shadow-lg sm:shadow-none shadow-black"
+      >
+        <label for="sidebar-active" class="p-5 sm:hidden">
+          <i class="fa-solid fa-xmark fa-2xl text-[--text-color]"></i>
+        </label>
+
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-4 flex justify-start items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
+          href="./index.html"
+          >Home</a
+        >
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-4 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
+          href="./gallery.html"
+          >Gallery</a
+        >
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-4 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
+          href="./booking.html"
+          >Booking</a
+        >
+        <a
+          class="sm:h-full w-full py-4 px-6 sm:px-2 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
+          href="./about.html"
+          >About</a
+        >
+        <a
+          class="sm:h-full py-4 px-6 sm:px-4 flex items-center no-underline text-[--text-color] transition-all duration-500 hover:bg-[--accent-color] text-sm md:text-base"
+          href="./contactus.html"
+          >Contact</a
+        >
+        <a
+          href="./login.html"
+          class="bg-orange-500 py-2 px-2 text-slate-100 rounded hover:bg-orange-600 transition duration-300 w-40 md:min-w-28 text-center font-medium sm:mr-4 self-center mt-6 sm:mt-0 capitalize text-sm md:text-base whitespace-nowrap"
+        >
+          Log in
+        </a>
+        <a
+          href="./signin.html"
+          class="bg-orange-500 py-2 px-2 text-slate-100 rounded hover:bg-orange-600 transition duration-300 w-40 mt-6 sm:mt-0 md:min-w-28 text-center font-medium sm:mr-4 self-center capitalize text-sm md:text-base whitespace-nowrap"
+        >
+          sign up
+        </a>
+      </div>
+    </nav>
+
+    <div class="relative w-full h-[400px]">
+      <!-- Video -->
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+      >
+        <source src="./media/2871916-hd_1920_1080_30fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Overlay Content -->
+      <div
+        class="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white px-4 hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <h1 class="text-4xl font-bold mb-4">Welcome to TraviZ</h1>
+        <p class="text-lg mb-6">
+          Your gateway to unforgettable travel experiences
+        </p>
+        <a href="#" class="">
+          <!-- From Uiverse.io by nathAd17 -->
+          <button
+            type="submit"
+            class="x-2 text-black flex justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-yellow-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
+          >
+            <a href="./gallery.html ">Explore</a>
+            <svg
+              class="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
+              viewBox="0 0 16 19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                class="fill-gray-800 group-hover:fill-gray-800"
+              ></path>
+            </svg>
+          </button>
+        </a>
+      </div>
     </div>
-  </nav>
 
-  <div class="relative w-full h-[400px]">
-    <!-- Video -->
-    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop>
-      <source src="./media/2871916-hd_1920_1080_30fps.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <section class="hero-section flex items-center bg-yellow-600 py-16">
+      <div class="max-w-7xl mx-auto px-4 w-full">
+        <div class="text-center">
+          <h1 class="text-white text-4xl md:text-5xl font-bold mb-6">
+            Where Comfort Meets Adventure
+          </h1>
+          <p class="text-white text-lg md:text-xl mb-10">
+            Wherever you go, stay smart with great deals
+          </p>
+        </div>
 
-    <!-- Overlay Content -->
-    <div
-      class="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white px-4 hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <h1 class="text-4xl font-bold mb-4">Welcome to TraviZ</h1>
-      <p class="text-lg mb-6">
-        Your gateway to an unforgettable travel experience.
-      </p>
-      <a href="#" class="">
-        <!-- From Uiverse.io by nathAd17 -->
-        <button type="submit"
-          class="x-2 flex justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-yellow-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group">
-          <a href="./gallery.html">Explore</a>
-          <svg
-            class="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
-            viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-              class="fill-gray-800 group-hover:fill-gray-800"></path>
-          </svg>
-        </button>
-      </a>
-    </div>
-  </div>
-
-  <section class="hero-section flex items-center bg-yellow-600 py-16">
-    <div class="max-w-7xl mx-auto px-4 w-full">
-      <div class="text-center">
-        <h1 class="text-white text-4xl md:text-5xl font-bold mb-6">
-          Where Comfort Meets Adventure
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <form>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div>
+                <label
+                  for="destination"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Destination</label
+                >
+                <input
+                  type="text"
+                  id="destination"
+                  placeholder="Where are you going?"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+              </div>
+              <div>
+                <label
+                  for="check-in"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Check-in</label
+                >
+                <input
+                  type="date"
+                  id="check-in"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yelllow-500"
+                />
+              </div>
+              <div>
+                <label
+                  for="check-out"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Check-out</label
+                >
+                <input
+                  type="date"
+                  id="check-out"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+              </div>
+              <div>
+                <label
+                  for="guests"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Guests</label
+                >
+                <select
+                  id="guests"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                >
+                  <option>1 adult</option>
+                  <option>2 adults</option>
+                  <option selected>2 adults, 1 child</option>
+                  <option>2 adults, 2 children</option>
+                  <option>Family</option>
+                </select>
+              </div>
+              <div class="flex items-end">
+                <!-- From Uiverse.io by Mubashir222 -->
+                <button
+                  class="relative inline-flex items-center justify-center px-8 py-2.5 overflow-hidden tracking-tighter text-white bg-gray-800 rounded-md group"
+                >
+                  <span
+                    class="absolute w-0 h-0 transition-all duration-500 ease-out bg-yellow-600 rounded-full group-hover:w-56 group-hover:h-56"
+                  ></span>
+                  <span class="absolute bottom-0 left-0 h-full -ml-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-auto h-full opacity-100 object-stretch"
+                      viewBox="0 0 487 487"
+                    >
+                      <path
+                        fill-opacity=".1"
+                        fill-rule="nonzero"
+                        fill="#FFF"
+                        d="M0 .3c67 2.1 134.1 4.3 186.3 37 52.2 32.7 89.6 95.8 112.8 150.6 23.2 54.8 32.3 101.4 61.2 149.9 28.9 48.4 77.7 98.8 126.4 149.2H0V.3z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="absolute top-0 right-0 w-12 h-full -mr-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="object-cover w-full h-full"
+                      viewBox="0 0 487 487"
+                    >
+                      <path
+                        fill-opacity=".1"
+                        fill-rule="nonzero"
+                        fill="#FFF"
+                        d="M487 486.7c-66.1-3.6-132.3-7.3-186.3-37s-95.9-85.3-126.2-137.2c-30.4-51.8-49.3-99.9-76.5-151.4C70.9 109.6 35.6 54.8.3 0H487v486.7z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span
+                    class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-200"
+                  ></span>
+                  <span class="relative text-base font-semibold">Search</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="bg-white shadow-md mt-5 p-6">
+      <div class="flex justify-center items-center">
+        <h1 class="text-3xl font-semibold">
+          <span class="text-3xl text-yellow-500 hover:text-gray-800"
+            >Popular</span
+          >
+          <span
+            class="text-center text-gray-800 hover:text-yellow-500"
+            style="transition: 2s"
+          >
+            Destinations</span
+          >
         </h1>
-        <p class="text-white text-lg md:text-xl mb-10">
-          Wherever you go, stay smart with great deals
-        </p>
       </div>
+    </div>
 
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <form>
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-            <div>
-              <label for="destination" class="block text-sm font-medium text-gray-700 mb-1">Destination</label>
-              <input type="text" id="destination" placeholder="Where are you going?"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+    <!-- Card Div! -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6"
+    >
+      <!-- Cards 1-->
+      <div
+        class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <img
+          class="w-full h-48 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/ea/f0/e7/eaf0e7c9b3f6f391416423a0c8074f2f.jpg"
+          alt="Destination Image"
+        />
+        <div class="mt-4">
+          <h2 class="text-xl font-semibold text-gray-800">Bali, Indonesia</h2>
+          <p class="text-gray-600 mt-2 text-sm">
+            Explore the serene beaches, tropical forests, and vibrant culture of
+            Bali.
+          </p>
+          <!-- From Uiverse.io by elijahgummer -->
+          <button
+            class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200"
+          >
+            <span class="text-lg"><a href="./booking.html">Book Now</a></span>
+            <div
+              class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+            >
+              <div class="relative h-full w-10 bg-yellow-300/50"></div>
             </div>
-            <div>
-              <label for="check-in" class="block text-sm font-medium text-gray-700 mb-1">Check-in</label>
-              <input type="date" id="check-in"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yelllow-500" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <img
+          class="w-full h-48 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/10/99/de/1099de397f7035a21902830ecd37f92e.jpg"
+          alt="Destination Image"
+        />
+        <div class="mt-4">
+          <h2 class="text-xl font-semibold text-gray-800">Paris, France</h2>
+          <p class="text-gray-600 mt-2 text-sm">
+            City of love, famous for the Eiffel Tower, museums, and cafes.
+          </p>
+          <button
+            class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200"
+          >
+            <span class="text-lg"><a href="./booking.html">Book Now</a></span>
+            <div
+              class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+            >
+              <div class="relative h-full w-10 bg-yellow-300/50"></div>
             </div>
-            <div>
-              <label for="check-out" class="block text-sm font-medium text-gray-700 mb-1">Check-out</label>
-              <input type="date" id="check-out"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <img
+          class="w-full h-48 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/81/f8/e0/81f8e0e548a1708888249361c95aa45a.jpg"
+          alt="Destination Image"
+        />
+        <div class="mt-4">
+          <h2 class="text-xl font-semibold text-gray-800">Kyoto, Japan</h2>
+          <p class="text-gray-600 mt-2 text-sm">
+            Historic temples, cherry blossoms, and traditional tea houses.
+          </p>
+          <button
+            class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200"
+          >
+            <span class="text-lg"><a href="./booking.html">Book Now</a></span>
+            <div
+              class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+            >
+              <div class="relative h-full w-10 bg-yellow-300/50"></div>
             </div>
-            <div>
-              <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">Guests</label>
-              <select id="guests"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                <option>1 adult</option>
-                <option>2 adults</option>
-                <option selected>2 adults, 1 child</option>
-                <option>2 adults, 2 children</option>
-                <option>Family</option>
-              </select>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div
+        class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <img
+          class="w-full h-48 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/ff/b5/0e/ffb50e64fede95eb607c7ccc2db48e3d.jpg"
+          alt="Destination Image"
+        />
+        <div class="mt-4">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Cape Town, South Africa
+          </h2>
+          <p class="text-gray-600 mt-2 text-sm">
+            Mountains, beaches, and vibrant culture all in one place.
+          </p>
+          <button
+            class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200"
+          >
+            <span class="text-lg"><a href="./booking.html">Book Now</a></span>
+            <div
+              class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+            >
+              <div class="relative h-full w-10 bg-yellow-300/50"></div>
             </div>
-            <div class="flex items-end">
-              <!-- From Uiverse.io by Mubashir222 -->
-              <button
-                class="relative inline-flex items-center justify-center px-8 py-2.5 overflow-hidden tracking-tighter text-white bg-gray-800 rounded-md group">
-                <span
-                  class="absolute w-0 h-0 transition-all duration-500 ease-out bg-yellow-600 rounded-full group-hover:w-56 group-hover:h-56"></span>
-                <span class="absolute bottom-0 left-0 h-full -ml-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-full opacity-100 object-stretch"
-                    viewBox="0 0 487 487">
-                    <path fill-opacity=".1" fill-rule="nonzero" fill="#FFF"
-                      d="M0 .3c67 2.1 134.1 4.3 186.3 37 52.2 32.7 89.6 95.8 112.8 150.6 23.2 54.8 32.3 101.4 61.2 149.9 28.9 48.4 77.7 98.8 126.4 149.2H0V.3z">
-                    </path>
-                  </svg>
-                </span>
-                <span class="absolute top-0 right-0 w-12 h-full -mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="object-cover w-full h-full" viewBox="0 0 487 487">
-                    <path fill-opacity=".1" fill-rule="nonzero" fill="#FFF"
-                      d="M487 486.7c-66.1-3.6-132.3-7.3-186.3-37s-95.9-85.3-126.2-137.2c-30.4-51.8-49.3-99.9-76.5-151.4C70.9 109.6 35.6 54.8.3 0H487v486.7z">
-                    </path>
-                  </svg>
-                </span>
-                <span
-                  class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-200"></span>
-                <span class="relative text-base font-semibold">Search</span>
-              </button>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div
+        class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <img
+          class="w-full h-48 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/3f/af/2a/3faf2a67ce638e670ba421138b0e06a5.jpg"
+          alt="Destination Image"
+        />
+        <div class="mt-4">
+          <h2 class="text-xl font-semibold text-gray-800">Santorini, Greece</h2>
+          <p class="text-gray-600 mt-2 text-sm">
+            Stunning white buildings, sunsets, and blue-domed churches.
+          </p>
+          <button
+            class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200"
+          >
+            <span class="text-lg"><a href="./booking.html">Book Now</a></span>
+            <div
+              class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+            >
+              <div class="relative h-full w-10 bg-yellow-300/50"></div>
             </div>
-          </div>
-        </form>
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
-  <div class="bg-white shadow-md mt-5 p-6">
-    <div class="flex justify-center items-center">
-      <h1 class="text-3xl font-semibold">
-        <span class="text-3xl text-yellow-500 hover:text-gray-800">Popular</span>
-        <span class="text-center text-gray-800 hover:text-yellow-500" style="transition: 2s">
-          Destinations</span>
-      </h1>
-    </div>
-  </div>
 
-  <!-- Card Div! -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6">
-    <!-- Cards 1-->
-    <div
-      class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <img class="w-full h-48 object-cover rounded-md"
-        src="https://i.pinimg.com/736x/ea/f0/e7/eaf0e7c9b3f6f391416423a0c8074f2f.jpg" alt="Destination Image" />
-      <div class="mt-4">
-        <h2 class="text-xl font-semibold text-gray-800">Bali, Indonesia</h2>
-        <p class="text-gray-600 mt-2 text-sm">
-          Explore the serene beaches, tropical forests, and vibrant culture of
-          Bali.
-        </p>
-        <!-- From Uiverse.io by elijahgummer -->
-        <button
-          class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200">
-          <span class="text-lg"><a href="./booking.html">Book Now</a></span>
-          <div
-            class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-            <div class="relative h-full w-10 bg-yellow-300/50"></div>
-          </div>
-        </button>
+      <!-- Card 6 -->
+      <div
+        class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <img
+          class="w-full h-48 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/ed/09/db/ed09db9a679fc6eed1378afcc3227e43.jpg"
+          alt="Destination Image"
+        />
+        <div class="mt-4">
+          <h2 class="text-xl font-semibold text-gray-800">
+            New York City, USA
+          </h2>
+          <p class="text-gray-600 mt-2 text-sm">
+            Skyscrapers, Central Park, Times Square, and endless energy.
+          </p>
+          <button
+            class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200"
+          >
+            <span class="text-lg"><a href="./booking.html">Book Now</a></span>
+            <div
+              class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+            >
+              <div class="relative h-full w-10 bg-yellow-300/50"></div>
+            </div>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- Card 2 -->
-    <div
-      class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <img class="w-full h-48 object-cover rounded-md"
-        src="https://i.pinimg.com/736x/10/99/de/1099de397f7035a21902830ecd37f92e.jpg" alt="Destination Image" />
-      <div class="mt-4">
-        <h2 class="text-xl font-semibold text-gray-800">Paris, France</h2>
-        <p class="text-gray-600 mt-2 text-sm">
-          City of love, famous for the Eiffel Tower, museums, and cafes.
-        </p>
-        <button
-          class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200">
-          <span class="text-lg"><a href="./booking.html">Book Now</a></span>
-          <div
-            class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-            <div class="relative h-full w-10 bg-yellow-300/50"></div>
-          </div>
-        </button>
+      <!-- Card 7 -->
+      <div
+        class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <img
+          class="w-full h-48 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/34/a8/b9/34a8b96ee490128a9e249bf70ca17227.jpg"
+          alt="Destination Image"
+        />
+        <div class="mt-4">
+          <h2 class="text-xl font-semibold text-gray-800">Rome, Italy</h2>
+          <p class="text-gray-600 mt-2 text-sm">
+            Ancient ruins like the Colosseum and Vatican City treasures.
+          </p>
+          <button
+            class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200"
+          >
+            <span class="text-lg"><a href="./booking.html">Book Now</a></span>
+            <div
+              class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+            >
+              <div class="relative h-full w-10 bg-yellow-300/50"></div>
+            </div>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- Card 3 -->
-    <div
-      class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <img class="w-full h-48 object-cover rounded-md"
-        src="https://i.pinimg.com/736x/81/f8/e0/81f8e0e548a1708888249361c95aa45a.jpg" alt="Destination Image" />
-      <div class="mt-4">
-        <h2 class="text-xl font-semibold text-gray-800">Kyoto, Japan</h2>
-        <p class="text-gray-600 mt-2 text-sm">
-          Historic temples, cherry blossoms, and traditional tea houses.
-        </p>
-        <button
-          class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200">
-          <span class="text-lg"><a href="./booking.html">Book Now</a></span>
-          <div
-            class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-            <div class="relative h-full w-10 bg-yellow-300/50"></div>
-          </div>
-        </button>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div
-      class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <img class="w-full h-48 object-cover rounded-md"
-        src="https://i.pinimg.com/736x/ff/b5/0e/ffb50e64fede95eb607c7ccc2db48e3d.jpg" alt="Destination Image" />
-      <div class="mt-4">
-        <h2 class="text-xl font-semibold text-gray-800">
-          Cape Town, South Africa
-        </h2>
-        <p class="text-gray-600 mt-2 text-sm">
-          Mountains, beaches, and vibrant culture all in one place.
-        </p>
-        <button
-          class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200">
-          <span class="text-lg"><a href="./booking.html">Book Now</a></span>
-          <div
-            class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-            <div class="relative h-full w-10 bg-yellow-300/50"></div>
-          </div>
-        </button>
+      <!-- Card 8 -->
+      <div
+        class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up"
+      >
+        <img
+          class="w-full h-48 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/41/7d/19/417d19c158331a696b53435c831ca347.jpg"
+          alt="Destination Image"
+        />
+        <div class="mt-4">
+          <h2 class="text-xl font-semibold text-gray-800">Dubai, UAE</h2>
+          <p class="text-gray-600 mt-2 text-sm">
+            Luxury shopping, modern architecture, and desert adventures.
+          </p>
+          <button
+            class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200"
+          >
+            <span class="text-lg"><a href="./booking.html">Book Now</a></span>
+            <div
+              class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
+            >
+              <div class="relative h-full w-10 bg-yellow-300/50"></div>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- Card 5 -->
-    <div
-      class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <img class="w-full h-48 object-cover rounded-md"
-        src="https://i.pinimg.com/736x/3f/af/2a/3faf2a67ce638e670ba421138b0e06a5.jpg" alt="Destination Image" />
-      <div class="mt-4">
-        <h2 class="text-xl font-semibold text-gray-800">Santorini, Greece</h2>
-        <p class="text-gray-600 mt-2 text-sm">
-          Stunning white buildings, sunsets, and blue-domed churches.
-        </p>
-        <button
-          class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200">
-          <span class="text-lg"><a href="./booking.html">Book Now</a></span>
-          <div
-            class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-            <div class="relative h-full w-10 bg-yellow-300/50"></div>
-          </div>
-        </button>
-      </div>
-    </div>
+    <!-- Optional(Ehh code venel use chaiyan alllel comment chaith vecheckk valiya use ella ) -->
 
-    <!-- Card 6 -->
-    <div
-      class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <img class="w-full h-48 object-cover rounded-md"
-        src="https://i.pinimg.com/736x/ed/09/db/ed09db9a679fc6eed1378afcc3227e43.jpg" alt="Destination Image" />
-      <div class="mt-4">
-        <h2 class="text-xl font-semibold text-gray-800">
-          New York City, USA
-        </h2>
-        <p class="text-gray-600 mt-2 text-sm">
-          Skyscrapers, Central Park, Times Square, and endless energy.
-        </p>
-        <button
-          class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200">
-          <span class="text-lg"><a href="./booking.html">Book Now</a></span>
-          <div
-            class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-            <div class="relative h-full w-10 bg-yellow-300/50"></div>
-          </div>
-        </button>
-      </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div
-      class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <img class="w-full h-48 object-cover rounded-md"
-        src="https://i.pinimg.com/736x/34/a8/b9/34a8b96ee490128a9e249bf70ca17227.jpg" alt="Destination Image" />
-      <div class="mt-4">
-        <h2 class="text-xl font-semibold text-gray-800">Rome, Italy</h2>
-        <p class="text-gray-600 mt-2 text-sm">
-          Ancient ruins like the Colosseum and Vatican City treasures.
-        </p>
-        <button
-          class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200">
-          <span class="text-lg"><a href="./booking.html">Book Now</a></span>
-          <div
-            class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-            <div class="relative h-full w-10 bg-yellow-300/50"></div>
-          </div>
-        </button>
-      </div>
-    </div>
-
-    <!-- Card 8 -->
-    <div
-      class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden p-6 animate-fade-in-up">
-      <img class="w-full h-48 object-cover rounded-md"
-        src="https://i.pinimg.com/736x/41/7d/19/417d19c158331a696b53435c831ca347.jpg" alt="Destination Image" />
-      <div class="mt-4">
-        <h2 class="text-xl font-semibold text-gray-800">Dubai, UAE</h2>
-        <p class="text-gray-600 mt-2 text-sm">
-          Luxury shopping, modern architecture, and desert adventures.
-        </p>
-        <button
-          class="mt-2 group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-yellow-500 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-yellow-400 border border-yellow-200">
-          <span class="text-lg"><a href="./booking.html">Book Now</a></span>
-          <div
-            class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-            <div class="relative h-full w-10 bg-yellow-300/50"></div>
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Optional(Ehh code venel use chaiyan alllel comment chaith vecheckk valiya use ella ) -->
-
-  <!-- <div class="overflow-hidden whitespace-nowrap bg-white py-6">
+    <!-- <div class="overflow-hidden whitespace-nowrap bg-white py-6">
   <div class="inline-block animate-marquee">
     <img src="https://i.pinimg.com/736x/89/16/ae/8916aead1174718b7a5e98fd12f69235.jpg" alt="Offer 1" class="inline-block mx-6 w-64 h-40 object-cover">
     <img src="https://i.pinimg.com/736x/47/e8/20/47e8209d8f26853e4940bd9da44e68f3.jpg" alt="Offer 2" class="inline-block mx-6 w-64 h-40 object-cover">
@@ -389,296 +533,530 @@
   </div>
 </div> -->
 
-  <!-- Special Discounts & Offers Section -->
-  <div class="bg-gradient-to-r from-yellow-50 to-gray-50 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800">
-          <span class="text-yellow-500">Special</span> Discounts & Offers
-        </h2>
-        <p class="mt-4 text-lg text-gray-600">
-          Limited time deals for your next adventure
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Offer 1 -->
-        <div
-          class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <div class="relative">
-            <img src="https://i.pinimg.com/736x/89/16/ae/8916aead1174718b7a5e98fd12f69235.jpg" alt="Summer Special"
-              class="w-full h-48 object-cover" />
-            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-              30% OFF
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800">
-              Summer Escape Package
-            </h3>
-            <p class="mt-2 text-gray-600">Valid until August 31, 2025</p>
-            <div class="mt-4 flex items-center justify-between">
-              <span class="text-lg font-bold text-yellow-600">$899
-                <span class="text-sm text-gray-500 line-through">$1285</span></span>
-              <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition">
-                <a href="./booking.html">Grab Deal</a>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Offer 2 -->
-        <div
-          class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <div class="relative">
-            <img src="https://i.pinimg.com/736x/47/e8/20/47e8209d8f26853e4940bd9da44e68f3.jpg" alt="Family Package"
-              class="w-full h-48 object-cover" />
-            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-              2+1 FREE
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800">
-              Family Holiday Special
-            </h3>
-            <p class="mt-2 text-gray-600">Kids stay & eat free</p>
-            <div class="mt-4 flex items-center justify-between">
-              <span class="text-lg font-bold text-yellow-600">$1499
-                <span class="text-sm text-gray-500 line-through">$2100</span></span>
-              <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition">
-                <a href="./booking.html">Limited Offer!</a>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Offer 3 -->
-        <div
-          class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          <div class="relative">
-            <img src="https://i.pinimg.com/736x/de/6a/c6/de6ac65c9605a215ed6215f3b20d6bfb.jpg" alt="Honeymoon Package"
-              class="w-full h-48 object-cover" />
-            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-              ROMANTIC
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800">Honeymoon Package</h3>
-            <p class="mt-2 text-gray-600">Free spa & candlelight dinner</p>
-            <div class="mt-4 flex items-center justify-between">
-              <span class="text-lg font-bold text-yellow-600">$1299
-                <span class="text-sm text-gray-500 line-through">$1799</span></span>
-              <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition">
-                <a href="./booking.html">View Details</a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-12 text-center">
-        <a href="#"
-          class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white">
-          <!-- From Uiverse.io by Javierrocadev -->
-          <button
-            class="overflow-hidden relative w-35 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group">
-            View More!
-            <span
-              class="absolute w-36 h-32 -top-8 -left-2 bg-yellow-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
-            <span
-              class="absolute w-36 h-32 -top-8 -left-2 bg-yellow-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
-            <span
-              class="absolute w-36 h-32 -top-8 -left-2 bg-yellow-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
-            <span
-              class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">Explore!</span>
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-blue-50 p-6 rounded-xl flex items-center justify-center text-center">
-    <div class="items-center justify-center">
-      <h3 class="text-2xl font-semibold mb-2">
-        Get Travel Deals in Your Inbox
-      </h3>
-
-      <input type="email" placeholder="Enter your email"
-        class="p-2 rounded border focus:outline-none focus:ring-2 focus:ring-yelllow-500" />
-      <div class="flex items-center justify-center mt-3 py-3">
-        <!-- From Uiverse.io by EcheverriaJesus -->
-        <button
-          class="flex items-center justify-center bg-yellow-500 text-white gap-1 px-4 py-2 cursor-pointer text-white font-semibold tracking-widest rounded-md hover:bg-black duration-300 hover:gap-2 hover:translate-x-3">
-          Send
-          <svg class="w-5 h-5" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-              stroke-linejoin="round" stroke-linecap="round"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-        <!-- Brand Column -->
-        <div class="space-y-4">
-          <div class="flex items-center space-x-2">
-            <img src="https://i.pinimg.com/736x/e9/1e/64/e91e6498a31102277e9045863e1a11f0.jpg" alt="TraviZ Logo"
-              class="w-12 h-12 rounded-full object-cover border border-yellow-500" />
-            <span class="text-2xl font-bold text-yellow-500">TraviZ</span>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Creating unforgettable journeys and experiences around the globe
-            since 2015.
+    <!-- Special Discounts & Offers Section -->
+    <div class="bg-gradient-to-r from-yellow-50 to-gray-50 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">
+            <span class="text-yellow-500">Special</span> Discounts & Offers
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Limited time deals for your next adventure
           </p>
-          <div class="flex space-x-4">
-            <a href="https://www.facebook.com/" class="text-gray-400 hover:text-yellow-500 transition">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://x.com/" class="text-gray-400 hover:text-yellow-500 transition">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/" class="text-gray-400 hover:text-yellow-500 transition">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/" class="text-gray-400 hover:text-yellow-500 transition">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Offer 1 -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+          >
+            <div class="relative">
+              <img
+                src="https://i.pinimg.com/736x/89/16/ae/8916aead1174718b7a5e98fd12f69235.jpg"
+                alt="Summer Special"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+              >
+                30% OFF
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800">
+                Summer Escape Package
+              </h3>
+              <p class="mt-2 text-gray-600">Valid until August 31, 2025</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold text-yellow-600"
+                  >$899
+                  <span class="text-sm text-gray-500 line-through"
+                    >$1285</span
+                  ></span
+                >
+                <button
+                  class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
+                >
+                  <a href="./booking.html">Grab Deal</a>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offer 2 -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+          >
+            <div class="relative">
+              <img
+                src="https://i.pinimg.com/736x/47/e8/20/47e8209d8f26853e4940bd9da44e68f3.jpg"
+                alt="Family Package"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+              >
+                2+1 FREE
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800">
+                Family Holiday Special
+              </h3>
+              <p class="mt-2 text-gray-600">Kids stay & eat free</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold text-yellow-600"
+                  >$1499
+                  <span class="text-sm text-gray-500 line-through"
+                    >$2100</span
+                  ></span
+                >
+                <button
+                  class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
+                >
+                  <a href="./booking.html">Limited Offer!</a>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offer 3 -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+          >
+            <div class="relative">
+              <img
+                src="https://i.pinimg.com/736x/de/6a/c6/de6ac65c9605a215ed6215f3b20d6bfb.jpg"
+                alt="Honeymoon Package"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+              >
+                ROMANTIC
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800">Honeymoon Package</h3>
+              <p class="mt-2 text-gray-600">Free spa & candlelight dinner</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold text-yellow-600"
+                  >$1299
+                  <span class="text-sm text-gray-500 line-through"
+                    >$1799</span
+                  ></span
+                >
+                <button
+                  class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
+                >
+                  <a href="./booking.html">View Details</a>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-            Explore
-          </h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="./gallery.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Destinations</a>
-            </li>
-            <li>
-              <a href="./gallery.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Special Offers</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Travel Guides</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Blog</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Support -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-            Support
-          </h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="./contactus.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Help Center</a>
-            </li>
-            <li>
-              <a href="./contactus.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Contact Us</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Privacy Policy</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-gray-400 hover:text-yellow-500 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                Terms of Service</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Newsletter -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 text-white uppercase tracking-wider">
-            Newsletter
-          </h3>
-          <p class="text-gray-400 text-sm mb-4">
-            Subscribe to get special offers, travel tips, and destination
-            inspiration.
-          </p>
-          <form class="flex flex-col space-y-3">
-            <input type="email" placeholder="Your email address"
-              class="px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" />
-            <button type="submit"
-              class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition flex items-center justify-center">
-              Subscribe
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                </path>
-              </svg>
+        <div class="mt-12 text-center">
+          <a
+            href="#"
+            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white"
+          >
+            <!-- From Uiverse.io by Javierrocadev -->
+            <button
+              class="overflow-hidden relative w-35 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group"
+            >
+              View More!
+              <span
+                class="absolute w-36 h-32 -top-8 -left-2 bg-yellow-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"
+              ></span>
+              <span
+                class="absolute w-36 h-32 -top-8 -left-2 bg-yellow-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"
+              ></span>
+              <span
+                class="absolute w-36 h-32 -top-8 -left-2 bg-yellow-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"
+              ></span>
+              <span
+                class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10"
+                >Explore!</span
+              >
             </button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <div class="text-gray-500 text-sm mb-4 md:mb-0">
-          © 2025 TraviZ. All rights reserved.
-        </div>
-        <div class="flex space-x-6">
-          <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">About</a>
-          <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Terms of Service</a>
-          <a href="#" class="text-gray-500 hover:text-yellow-500 transition text-sm">Sitemap</a>
-        </div>
-        <div class="flex items-center mt-4 md:mt-0">
-          <span class="text-gray-500 text-sm mr-2">Payment Methods:</span>
-          <div class="flex space-x-2">
-            <i class="fab fa-cc-visa text-gray-400 hover:text-yellow-500 transition"></i>
-            <i class="fab fa-cc-mastercard text-gray-400 hover:text-yellow-500 transition"></i>
-            <i class="fab fa-cc-paypal text-gray-400 hover:text-yellow-500 transition"></i>
-            <i class="fab fa-cc-apple-pay text-gray-400 hover:text-yellow-500 transition"></i>
-          </div>
+          </a>
         </div>
       </div>
     </div>
-  </footer>
-</body>
 
+    <div
+      class="bg-blue-50 p-6 rounded-xl flex items-center justify-center text-center"
+    >
+      <div class="items-center justify-center">
+        <h3 class="text-2xl font-semibold mb-2">
+          Get Travel Deals in Your Inbox
+        </h3>
+
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="p-2 rounded border focus:outline-none focus:ring-2 focus:ring-yelllow-500"
+        />
+        <div class="flex items-center justify-center mt-3 py-3">
+          <!-- From Uiverse.io by EcheverriaJesus -->
+          <button
+            class="flex items-center justify-center bg-yellow-500 text-white gap-1 px-4 py-2 cursor-pointer text-white font-semibold tracking-widest rounded-md hover:bg-black duration-300 hover:gap-2 hover:translate-x-3"
+          >
+            Send
+            <svg
+              class="w-5 h-5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll to Top Button -->
+    <a
+      href="#top"
+      class="fixed bottom-5 right-5 bg-[#EAB308] text-black p-3 rounded-full shadow-md hover:bg-orange-500 transition-all z-50"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <!-- Brand Column -->
+          <div class="space-y-4">
+            <div class="flex items-center space-x-2">
+              <img
+                src="./media/media/logo-1.png"
+                alt="TraviZ Logo"
+                class="w-12 h-12 rounded-full object-cover border border-yellow-500"
+              />
+              <span class="text-2xl font-bold text-yellow-500">TraviZ</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Creating unforgettable journeys and experiences around the globe
+              since 2015.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.facebook.com/"
+                class="text-gray-400 hover:text-yellow-500 transition"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://x.com/"
+                class="text-gray-400 hover:text-yellow-500 transition"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                class="text-gray-400 hover:text-yellow-500 transition"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/"
+                class="text-gray-400 hover:text-yellow-500 transition"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3
+              class="text-lg font-semibold mb-4 text-white uppercase tracking-wider"
+            >
+              Explore
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./gallery.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Destinations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./gallery.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Special Offers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Travel Guides</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3
+              class="text-lg font-semibold mb-4 text-white uppercase tracking-wider"
+            >
+              Support
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./contactus.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./contactus.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-gray-400 hover:text-yellow-500 transition flex items-center"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                  Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h3
+              class="text-lg font-semibold mb-4 text-white uppercase tracking-wider"
+            >
+              Newsletter
+            </h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Subscribe to get special offers, travel tips, and destination
+              inspiration.
+            </p>
+            <form class="flex flex-col space-y-3">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+              />
+              <button
+                type="submit"
+                class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition flex items-center justify-center"
+              >
+                Subscribe
+                <svg
+                  class="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <div class="text-gray-500 text-sm mb-4 md:mb-0">
+            © 2025 TraviZ. All rights reserved.
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-500 hover:text-yellow-500 transition text-sm"
+              >About</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 hover:text-yellow-500 transition text-sm"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 hover:text-yellow-500 transition text-sm"
+              >Sitemap</a
+            >
+          </div>
+          <div class="flex items-center mt-4 md:mt-0">
+            <span class="text-gray-500 text-sm mr-2">Payment Methods:</span>
+            <div class="flex space-x-2">
+              <i
+                class="fab fa-cc-visa text-gray-400 hover:text-yellow-500 transition"
+              ></i>
+              <i
+                class="fab fa-cc-mastercard text-gray-400 hover:text-yellow-500 transition"
+              ></i>
+              <i
+                class="fab fa-cc-paypal text-gray-400 hover:text-yellow-500 transition"
+              ></i>
+              <i
+                class="fab fa-cc-apple-pay text-gray-400 hover:text-yellow-500 transition"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
